@@ -44,9 +44,8 @@ namespace KataPencilDurability.Tests
         }
 
         [Theory]
-
         [InlineData(5,5,"paper value","value","paper      ")]//Many Erases
-        [InlineData(3, 1, "Buffalo Bill", "Bill", "Buffalo B   ")]//No Erases
+        [InlineData(3, 1, "Buffalo Bill", "Bill", "Buffalo B   ")]//One erase, not enough eraser left
         [InlineData(0,0,"","","")]//No Erases
 
         public void TestPencilEraserDurability(int EraserDurability,int Erasings,string PaperValue, string TextToErase, string ExpectedOutput)

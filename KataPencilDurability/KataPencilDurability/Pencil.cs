@@ -8,15 +8,13 @@ namespace KataPencilDurability
 {
     public class Pencil
     {
-        //todo - review .net coding standard for naming conventions, probably shouldn't duplicate
-        //constructor input with property names
         //todo - remove default value for EraserDurability
-        public Pencil(int Durability, int Length, int EraserDurability = 1)
+        public Pencil(int durability, int length, int eraserDurability = 1)
         {
-            this.Durability = Durability;
-            this.OriginalDurability = Durability;
-            this.Length = Length;
-            this.EraserDurability = EraserDurability;
+            this.Durability = durability;
+            this.OriginalDurability = durability;
+            this.Length = length;
+            this.EraserDurability = eraserDurability;
         }
 
 
