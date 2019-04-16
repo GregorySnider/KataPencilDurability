@@ -7,7 +7,7 @@ namespace KataPencilDurability.Tests
     {
         [Theory]
         [InlineData(4, "text", "text")]
-        //[InlineData(4, "Text", "Tex ")]
+        [InlineData(4, "Text", "Tex ")]
 
         public void TestPencilManufacturer(int durability,string textToWrite,string expectedValue)
         {
