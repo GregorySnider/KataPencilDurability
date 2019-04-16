@@ -64,7 +64,7 @@ namespace KataPencilDurability.Tests
                 numberOfSharpenings--;
                 pencil.Sharpen();
             }
-//            pencil.Write(textToWrite);
+            pencil.Write(textToWrite);
 
             //Assert
             Assert.Equal(expectedDurability, pencil.Durability);
