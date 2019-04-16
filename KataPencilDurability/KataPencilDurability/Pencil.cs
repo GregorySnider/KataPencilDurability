@@ -28,7 +28,7 @@ namespace KataPencilDurability
             if (Char.IsUpper(letter))
             {
                 Durability = Durability - 2;
-            } else
+            } else if(letter != ' ') // && letter != '\r' && letter != '\n')
             {
                 Durability = Durability - 1;
             }
