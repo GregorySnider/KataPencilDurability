@@ -16,8 +16,8 @@ namespace KataPencilDurability
         }
 
 
-        private int OriginalDurability;
-        private int Durability { get; set; }
+        public int OriginalDurability { get; private set; }
+        public int Durability {  get; private set; }
 
         public int Length { get; set; }
 
