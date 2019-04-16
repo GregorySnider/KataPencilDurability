@@ -42,6 +42,33 @@ namespace KataPencilDurability.Tests
 
         }
 
+        [Theory]
+
+        [InlineData(5,5,"paper value","value","paper      ")]//Many Erases
+        [InlineData(3, 1, "Buffalo Bill", "Bill", "Buffalo B   ")]//No Erases
+        [InlineData(0,0,"","","")]//No Erases
+
+        public void TestPencilEraserDurability(int EraserDurability,int Erasings,string PaperValue, string TextToErase, string ExpectedOutput)
+        {
+            //Arrange
+            //TODO - fix Hardcoded durability and length, 
+            //hardcoded because they are irrelavent for this test
+            Pencil pencil = new Pencil(1000,100,EraserDurability);
+
+            //Act
+            //TODO - implement loop for erasing multiple times
+            string paper = PaperValue;
+            while (Erasings > 0)
+            {
+                Erasings--;
+                paper = pencil.Erase(paper, TextToErase);
+            }
+
+            //Assert
+            Assert.Equal(ExpectedOutput, paper);
+
+        }
+
 
         [Theory]
         //durability, pencilLength, numberOfSharpenings, expectedDurability

@@ -5,4 +5,5 @@ Reference: https://github.com/PillarTechnology/kata-pencil-durability
 Write - Basic write functionality
 Point Degradation - Basic functionality **warning - newlines are NOT accounted for yet**
 Sharpen - Basic sharpen functionality
-Erase - Not implemented yet
+Erase - Basic erase functionality
+Eraser Degradation - in progress

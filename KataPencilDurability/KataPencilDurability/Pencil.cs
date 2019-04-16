@@ -57,7 +57,13 @@ namespace KataPencilDurability
 
             string spaces = new string(' ', textToErase.Length);
             int lastIdx = paper.LastIndexOf(textToErase);
-            return paper.Substring(0, lastIdx) + spaces + paper.Substring(lastIdx + textToErase.Length, (paper.Length - (lastIdx + textToErase.Length)));
+            if (lastIdx > 0)
+            {
+                return paper.Substring(0, lastIdx) + spaces + paper.Substring(lastIdx + textToErase.Length, (paper.Length - (lastIdx + textToErase.Length)));
+            }
+            else {
+                return paper;
+            }
         }
 
         private void WriteToBuilder(char letter, StringBuilder stringBuilder )
