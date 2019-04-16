@@ -54,8 +54,17 @@ namespace KataPencilDurability
         public string Erase(string paper, string textToErase)
         {
             //todo - guard/verify/test against null/empty strings
+            string spaces = "";
+            if ((EraserDurability - textToErase.Length) > 0)
+            {
+                spaces = new string(' ', textToErase.Length);
 
-            string spaces = new string(' ', textToErase.Length);
+            } else
+            {
+                spaces = new string(' ', EraserDurability);
+                textToErase = textToErase.Substring(textToErase.Length - EraserDurability);
+                EraserDurability = 0;
+            }
             int lastIdx = paper.LastIndexOf(textToErase);
             if (lastIdx > 0)
             {
@@ -75,6 +84,8 @@ namespace KataPencilDurability
 
             } else if(letter != ' ') 
                 //TODO - implement handling newlines
+                //Research - will I need to detect the '\' character and interpret the next letter myself
+                //Or is there a better way to handle special characters like this?
                 // && letter != '\r' && letter != '\n')
             {
                 Durability = Durability - 1;

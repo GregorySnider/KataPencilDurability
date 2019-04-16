@@ -32,7 +32,8 @@ namespace KataPencilDurability.Tests
 
             //Act
             String textToErase = "chuck";
-            Pencil pencil = new Pencil(textToErase.Length, 1);
+            //Added EraserDurability to constructor
+            Pencil pencil = new Pencil(textToErase.Length, 1, 100);
             paper = pencil.Erase(paper, textToErase);//Erase chuck once
             paper = pencil.Erase(paper,textToErase);//Erase chuck twice
 
