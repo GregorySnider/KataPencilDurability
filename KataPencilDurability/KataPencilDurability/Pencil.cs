@@ -46,6 +46,11 @@ namespace KataPencilDurability
             return sb.ToString();
         }
 
+        public string Erase()
+        {
+            throw new NotImplementedException();
+        }
+
         private void WriteToBuilder(char letter, StringBuilder stringBuilder )
         {
             char outOfInkChar = ' ';

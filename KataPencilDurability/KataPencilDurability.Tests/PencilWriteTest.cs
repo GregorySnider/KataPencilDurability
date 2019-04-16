@@ -15,7 +15,7 @@ namespace KataPencilDurability.Tests
             //Write with our pencil " down by the sea shore";
             String textToWrite = " down by the sea shore";
             Pencil pencil = new Pencil(textToWrite.Length, 1);
-            paper = paper + textToWrite;
+            paper = paper + pencil.Write(textToWrite);
 
 
             //Assert
@@ -24,6 +24,27 @@ namespace KataPencilDurability.Tests
 
 
         }
+        [Fact]
+        public void TestPencilEraser()
+        {
+            //Arrange
+            String paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+
+            //Act
+            //Write with our pencil " down by the sea shore";
+            String textToWrite = "chuck";
+            Pencil pencil = new Pencil(textToWrite.Length, 1);
+            paper = paper + pencil.Erase();
+
+
+
+            //Assert
+            String expectedValue = "How much wood would a woodchuck chuck if a woodchuck could       wood?";
+            Assert.Equal(expectedValue, paper);
+
+        }
+
+
         [Theory]
         //durability, pencilLength, numberOfSharpenings, expectedDurability
         [InlineData(40000, 5, 10, 40000)]//Many sharpenings, no writes
