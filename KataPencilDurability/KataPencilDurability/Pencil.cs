@@ -8,16 +8,21 @@ namespace KataPencilDurability
 {
     public class Pencil
     {
-        public Pencil(int Durability, int Length)
+        //todo - review .net coding standard for naming conventions, probably shouldn't duplicate
+        //constructor input with property names
+        //todo - remove default value for EraserDurability
+        public Pencil(int Durability, int Length, int EraserDurability = 1)
         {
             this.Durability = Durability;
             this.OriginalDurability = Durability;
             this.Length = Length;
+            this.EraserDurability = EraserDurability;
         }
 
 
         public int OriginalDurability { get; private set; }
         public int Durability {  get; private set; }
+        public int EraserDurability { get; private set; }
 
         public int Length { get; set; }
 
@@ -46,9 +51,13 @@ namespace KataPencilDurability
             return sb.ToString();
         }
 
-        public string Erase()
+        public string Erase(string paper, string textToErase)
         {
-            throw new NotImplementedException();
+            //todo - guard/verify/test against null/empty strings
+
+            string spaces = new string(' ', textToErase.Length);
+            int lastIdx = paper.LastIndexOf(textToErase);
+            return paper.Substring(0, lastIdx) + spaces + paper.Substring(lastIdx + textToErase.Length, (paper.Length - (lastIdx + textToErase.Length)));
         }
 
         private void WriteToBuilder(char letter, StringBuilder stringBuilder )

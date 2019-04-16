@@ -31,15 +31,13 @@ namespace KataPencilDurability.Tests
             String paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
 
             //Act
-            //Write with our pencil " down by the sea shore";
-            String textToWrite = "chuck";
-            Pencil pencil = new Pencil(textToWrite.Length, 1);
-            paper = paper + pencil.Erase();
-
-
+            String textToErase = "chuck";
+            Pencil pencil = new Pencil(textToErase.Length, 1);
+            paper = pencil.Erase(paper, textToErase);//Erase chuck once
+            paper = pencil.Erase(paper,textToErase);//Erase chuck twice
 
             //Assert
-            String expectedValue = "How much wood would a woodchuck chuck if a woodchuck could       wood?";
+            String expectedValue = "How much wood would a woodchuck chuck if a wood      could       wood?";
             Assert.Equal(expectedValue, paper);
 
         }
