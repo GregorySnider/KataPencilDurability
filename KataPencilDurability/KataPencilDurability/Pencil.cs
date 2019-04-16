@@ -8,8 +8,32 @@ namespace KataPencilDurability
 {
     public class Pencil
     {
-        public int Durability { get; set; }
+        public Pencil(int Durability, int Length)
+        {
+            this.Durability = Durability;
+            this.OriginalDurability = Durability;
+            this.Length = Length;
+        }
 
+
+        private int OriginalDurability;
+        private int Durability { get; set; }
+
+        public int Length { get; set; }
+
+        public void Sharpen()
+        {
+            if (Length == 0)
+            {
+                return;
+            }
+            if (Length >= 1)
+            {
+                Length = Length - 1;
+                Durability = OriginalDurability;
+            }
+            return;
+        }
 
         public string Write(string input)
         {
@@ -28,7 +52,10 @@ namespace KataPencilDurability
             if (Char.IsUpper(letter))
             {
                 Durability = Durability - 2;
-            } else if(letter != ' ') // && letter != '\r' && letter != '\n')
+
+            } else if(letter != ' ') 
+                //TODO - implement handling newlines
+                // && letter != '\r' && letter != '\n')
             {
                 Durability = Durability - 1;
             }

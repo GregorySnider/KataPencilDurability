@@ -14,6 +14,7 @@ namespace KataPencilDurability.Tests
             //Act
             //Write with our pencil " down by the sea shore";
             String textToWrite = " down by the sea shore";
+            Pencil pencil = new Pencil(textToWrite.Length, 1);
             paper = paper + textToWrite;
 
 
