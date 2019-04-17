@@ -47,7 +47,8 @@ namespace KataPencilDurability.Tests
         [InlineData(5,5,"paper value","value","paper      ")]//Many Erases
         [InlineData(3, 1, "Buffalo Bill", "Bill", "Buffalo B   ")]//One erase, not enough eraser left
         [InlineData(0,0,"","","")]//No Erases
-
+        [InlineData(10, 1, "", null, "")]//No text to write at all (null)
+        [InlineData(10, 1, null, "", "")]//No paper to write on at all (null)
         public void TestPencilEraserDurability(int EraserDurability,int Erasings,string PaperValue, string TextToErase, string ExpectedOutput)
         {
             //Arrange
@@ -56,7 +57,6 @@ namespace KataPencilDurability.Tests
             Pencil pencil = new Pencil(1000,100,EraserDurability);
 
             //Act
-            //TODO - implement loop for erasing multiple times
             string paper = PaperValue;
             while (Erasings > 0)
             {

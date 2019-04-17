@@ -10,7 +10,7 @@ namespace KataPencilDurability.Tests
         [InlineData(4, "text", "text")]
         [InlineData(4, "Text", "Tex ")]
         [InlineData(8, "Tex Mex", "Tex Mex")]
-//TODO -implement newline         [InlineData(6, "text \r\n me", "text \r\n me")]
+        [InlineData(6, "text \r\n me", "text \r\n me")]
 
 
         public void TestPencilManufacturer(int durability,string textToWrite,string expectedValue)

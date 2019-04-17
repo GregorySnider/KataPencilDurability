@@ -8,7 +8,7 @@ namespace KataPencilDurability
 {
     public class Pencil
     {
-        //todo - remove default value for EraserDurability
+        //todo - possibly remove default value for EraserDurability
         public Pencil(int durability, int length, int eraserDurability = 1)
         {
             this.Durability = durability;
@@ -80,11 +80,7 @@ namespace KataPencilDurability
             {
                 Durability = Durability - 2;
 
-            } else if(letter != ' ') 
-                //TODO - implement handling newlines
-                //Research - will I need to detect the '\' character and interpret the next letter myself
-                //Or is there a better way to handle special characters like this?
-                // && letter != '\r' && letter != '\n')
+            } else if(letter != ' ' && letter != '\r' && letter != '\n') 
             {
                 Durability = Durability - 1;
             }
