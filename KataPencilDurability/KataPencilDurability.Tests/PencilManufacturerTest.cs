@@ -11,8 +11,8 @@ namespace KataPencilDurability.Tests
         [InlineData(4, "Text", "Tex ")]
         [InlineData(8, "Tex Mex", "Tex Mex")]
         [InlineData(6, "text \r\n me", "text \r\n me")]
-
-
+        [InlineData(6, "", "")]//test writing nothing
+        [InlineData(6, null, "")]//test writing null
         public void TestPencilManufacturer(int durability,string textToWrite,string expectedValue)
         {
             //Arrange

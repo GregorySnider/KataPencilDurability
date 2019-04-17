@@ -24,6 +24,7 @@ namespace KataPencilDurability.Tests
 
 
         }
+
         [Fact]
         public void TestPencilEraser()
         {
@@ -47,13 +48,15 @@ namespace KataPencilDurability.Tests
         [InlineData(5,5,"paper value","value","paper      ")]//Many Erases
         [InlineData(3, 1, "Buffalo Bill", "Bill", "Buffalo B   ")]//One erase, not enough eraser left
         [InlineData(0,0,"","","")]//No Erases
-        [InlineData(10, 1, "", null, "")]//No text to write at all (null)
-        [InlineData(10, 1, null, "", "")]//No paper to write on at all (null)
+        [InlineData(10, 1, "", null, "")]//No text to erase at all (null)
+        [InlineData(10, 1, null, "", "")]//No paper to erase on at all (null)
+        [InlineData(10, 1, "", "", "")]//Blank paper, nothing to erase (null)
+        [InlineData(10, 1, "", "something", "")]//Blank paper, something to erase (null)
         public void TestPencilEraserDurability(int EraserDurability,int Erasings,string PaperValue, string TextToErase, string ExpectedOutput)
         {
             //Arrange
             //TODO - fix Hardcoded durability and length, 
-            //hardcoded because they are irrelavent for this test
+            //hardcoded pencil durabilty and length because they are irrelevant for this test
             Pencil pencil = new Pencil(1000,100,EraserDurability);
 
             //Act

@@ -2,7 +2,7 @@
 Reference: https://github.com/PillarTechnology/kata-pencil-durability
 
 
-**BETA - code still has todo items and needs review**
+
 
 **User Stories:**
 Write - Basic write functionality
@@ -12,7 +12,6 @@ Erase - Basic erase functionality
 Eraser Degradation - Basic eraser degradation functionality
 Editing - Not implemented
 
-TODO:
 
 Build steps:
 Use Visual Studio with access to nuget.
@@ -20,4 +19,4 @@ Click build - It is expected that xunit, xunit.runner.console, and xunit.runner.
 
 
 Run steps:
-Go to Test / Test Explorer
+Go to Test / Test Explorer and click Run All

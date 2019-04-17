@@ -40,23 +40,25 @@ namespace KataPencilDurability
 
         public string Write(string input)
         {
+            if (input == null) { return ""; }
+
             StringBuilder sb = new StringBuilder();
             var letters = input.ToCharArray();
 
             letters.ToList().ForEach(l => WriteToBuilder(l, sb));
             
-
             return sb.ToString();
         }
 
         public string Erase(string paper, string textToErase)
         {
-            //todo - guard/verify/test against null/empty strings
+            if (paper == null) { return ""; }
+            if (textToErase == null) { return ""; }
+
             string spaces = "";
             if ((EraserDurability - textToErase.Length) > 0)
             {
                 spaces = new string(' ', textToErase.Length);
-
             } else
             {
                 spaces = new string(' ', EraserDurability);
@@ -73,6 +75,12 @@ namespace KataPencilDurability
             }
         }
 
+        private bool IsDurabilityCharacter(char c)
+        {
+            //Currently only whitespace does not affect durability
+            return (!Char.IsWhiteSpace(c));
+        }
+
         private void WriteToBuilder(char letter, StringBuilder stringBuilder )
         {
             char outOfInkChar = ' ';
@@ -80,7 +88,7 @@ namespace KataPencilDurability
             {
                 Durability = Durability - 2;
 
-            } else if(letter != ' ' && letter != '\r' && letter != '\n') 
+            } else if(IsDurabilityCharacter(letter)) 
             {
                 Durability = Durability - 1;
             }
