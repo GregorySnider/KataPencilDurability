@@ -8,6 +8,9 @@ namespace KataPencilDurability
 {
     public class Pencil
     {
+        private const int upperCaseDurabilityCost = 2;
+        private const int lowerCaseDurabilityCost = 1;
+
         //todo - possibly remove default value for EraserDurability
         public Pencil(int durability, int length, int eraserDurability = 1)
         {
@@ -44,7 +47,7 @@ namespace KataPencilDurability
 
             StringBuilder sb = new StringBuilder();
             var letters = input.ToCharArray();
-
+            
             letters.ToList().ForEach(l => WriteToBuilder(l, sb));
             
             return sb.ToString();
@@ -86,11 +89,11 @@ namespace KataPencilDurability
             char outOfInkChar = ' ';
             if (Char.IsUpper(letter))
             {
-                Durability = Durability - 2;
+                Durability = Durability - upperCaseDurabilityCost;
 
             } else if(IsDurabilityCharacter(letter)) 
             {
-                Durability = Durability - 1;
+                Durability = Durability - lowerCaseDurabilityCost;
             }
             if (Durability >= 0)
             {

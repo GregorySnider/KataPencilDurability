@@ -18,5 +18,5 @@ Use Visual Studio with access to nuget.
 Click build - It is expected that xunit, xunit.runner.console, and xunit.runner.visualstudio 2.4.1 will update
 
 
-Run steps:
+Test Run steps:
 Go to Test / Test Explorer and click Run All
