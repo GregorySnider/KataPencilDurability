@@ -10,7 +10,7 @@ Point Degradation - Basic functionality\
 Sharpen - Basic sharpen functionality\
 Erase - Basic erase functionality\
 Eraser Degradation - Basic eraser degradation functionality\
-Editing - Not implemented\
+Editing - Not implemented
 
 
 Build steps:
